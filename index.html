@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gorontalo Green School (GGS)</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f8;}
+    header {background: #2f855a; color: #fff; padding: 15px 20px; position: sticky; top: 0;}
+    nav {display: flex; justify-content: space-between; align-items: center;}
+    nav ul {list-style: none; display: flex; margin: 0; padding: 0;}
+    nav ul li {margin-left: 20px;}
+    nav a {color: white; text-decoration: none;}
+    .lang-toggle {cursor: pointer; background: #fff; color: #2f855a; border: none; padding: 5px 10px; border-radius: 4px;}
+    section {padding: 40px 20px; max-width: 900px; margin: auto; background: white; margin-top: 20px; border-radius: 8px;}
+    h1, h2 {color: #2f855a;}
+    footer {background: #2f855a; color: white; text-align: center; padding: 15px;}
+    .galeri img {width: 30%; margin: 1%; border-radius: 6px;}
+    @media(max-width:600px) {
+      nav ul {flex-direction: column;}
+      .galeri img {width: 100%;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div><strong>GGS</strong></div>
+    <ul>
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  </nav>
+</header>
+<main>
+  <section id="home">
+    <h1 id="title-home">Selamat Datang di Gorontalo Green School (GGS)</h1>
+    <p id="desc-home">GGS adalah komunitas pendidikan lingkungan hidup yang berlokasi di Kabupaten Pohuwato, Gorontalo, berfokus pada pelatihan guru dan siswa untuk menjaga kelestarian lingkungan.</p>
+  </section>
+  <section id="tentang">
+    <h2 id="title-about">Tentang Kami</h2>
+    <p id="desc-about">GGS didirikan oleh alumni Program Bekal Pemimpin 3.0 United in Diversity tahun 2023 bersama Yayasan Pondok Pesantren Salafiyah Syafi’iyah, dengan misi mengedukasi dan mendorong aksi nyata pelestarian lingkungan sejak usia sekolah.</p>
+  </section>
+  <section id="kegiatan">
+    <h2 id="title-activities">Kegiatan Kami</h2>
+    <ul id="list-activities">
+      <li>Pelatihan guru tentang pendidikan lingkungan</li>
+      <li>Pengelolaan dan pemilahan sampah</li>
+      <li>Kampanye wadah makanan isi ulang</li>
+      <li>Aksi bersih sekolah dan lingkungan</li>
+    </ul>
+  </section>
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="galeri">
+      <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Foto 1" />
+      <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Foto 2" />
+      <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Foto 3" />
+    </div>
+  </section>
+  <section id="kontak">
+    <h2 id="title-contact">Kontak Kami</h2>
+    <p id="desc-contact">
+      Email: info@ggs.or.id<br>
+      Telepon: +62 812-3456-7890<br>
+      Alamat: Desa Banuroja, Kecamatan Randangan, Kabupaten Pohuwato, Gorontalo
+    </p>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2025 Gorontalo Green School (GGS). All rights reserved.</p>
+</footer>
+<script>
+  const isEN = { value: false };
+  function toggleLang() {
+    const btn = document.querySelector('.lang-toggle');
+    isEN.value = !isEN.value;
+    btn.innerText = isEN.value ? 'ID' : 'EN';
+    document.getElementById('title-home').innerText = isEN.value ?
+      'Welcome to Gorontalo Green School (GGS)' :
+      'Selamat Datang di Gorontalo Green School (GGS)';
+    document.getElementById('desc-home').innerText = isEN.value ?
+      'GGS is an environmental education community based in Pohuwato, Gorontalo, focusing on training teachers and students to preserve the environment.' :
+      'GGS adalah komunitas pendidikan lingkungan hidup yang berlokasi di Kabupaten Pohuwato, Gorontalo, berfokus pada pelatihan guru dan siswa untuk menjaga kelestarian lingkungan.';
+    document.getElementById('title-about').innerText = isEN.value ? 'About Us' : 'Tentang Kami';
+    document.getElementById('desc-about').innerText = isEN.value ?
+      'GGS was founded by alumni of the Leadership Provision Program 3.0 in 2023 with the Islamic Boarding School Foundation, aiming to educate and encourage environmental action from school age.' :
+      'GGS didirikan oleh alumni Program Bekal Pemimpin 3.0 United in Diversity tahun 2023 bersama Yayasan Pondok Pesantren Salafiyah Syafi’iyah, dengan misi mengedukasi dan mendorong aksi nyata pelestarian lingkungan sejak usia sekolah.';
+    document.getElementById('title-activities').innerText = isEN.value ? 'Our Activities' : 'Kegiatan Kami';
+    document.getElementById('list-activities').innerHTML = isEN.value ? `
+      <li>Teacher training on environmental education</li>
+      <li>School waste sorting and management</li>
+      <li>Reusable food container campaign</li>
+      <li>School and community cleanup actions</li>` : `
+      <li>Pelatihan guru tentang pendidikan lingkungan</li>
+      <li>Pengelolaan dan pemilahan sampah</li>
+      <li>Kampanye wadah makanan isi ulang</li>
+      <li>Aksi bersih sekolah dan lingkungan</li>`;
+    document.getElementById('title-contact').innerText = isEN.value ? 'Contact Us' : 'Kontak Kami';
+    document.getElementById('desc-contact').innerHTML = isEN.value ?
+      'Email: info@ggs.or.id<br>Phone: +62 812-3456-7890<br>Address: Banuroja Village, Randangan District, Pohuwato Regency, Gorontalo' :
+      'Email: info@ggs.or.id<br>Telepon: +62 812-3456-7890<br>Alamat: Desa Banuroja, Kecamatan Randangan, Kabupaten Pohuwato, Gorontalo';
+  }
+</script>
+</body>
+</html>
